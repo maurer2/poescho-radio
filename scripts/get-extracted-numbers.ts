@@ -1,20 +1,29 @@
 import { Code } from '../types/types';
 
 export default function getExtractedNumbers(serialNumber: string): Code {
-  if (serialNumber == null || serialNumber === '') {
-    throw new Error('number is empty');
+  if (serialNumber == null) {
+    throw new Error('serialNumber is missing');
+  }
+
+  if (typeof serialNumber !== 'string' ) {
+    throw new Error('serialNumber is not a string');
   }
 
   if (serialNumber.length < 4) {
-    throw 'number is too short';
+    throw new Error('serialNumber is too short');
   }
 
-  const extractedText = serialNumber.slice(-4);
-  const splitText = extractedText.split('');
-  const convertedNumbers = splitText.map((entry) => parseInt(entry, 10))
+  const extractedLastDigits = serialNumber.slice(-4);
 
-  let code: Code;
-  for (const [index, value] of convertedNumbers.entries()) {
+  if (!(extractedLastDigits.match(/^\d+$/))) {
+    throw new Error('last 4 entries in serialNumber contains non numeric values');
+  }
+
+  const extractedLastDigitsAsArray = extractedLastDigits.split('');
+  const parsedNumbersArray = extractedLastDigitsAsArray.map((entry) => parseInt(entry, 10))
+
+  let code: Code = [0,0,0,0]
+  for (const [index, value] of parsedNumbersArray.entries()) {
     code[index] = value
   }
 
