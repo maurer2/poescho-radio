@@ -1,4 +1,6 @@
-export default function getExtractedNumbers(serialNumber: string): number[] {
+import { Code } from '../types/types';
+
+export default function getExtractedNumbers(serialNumber: string): Code {
   if (serialNumber == null || serialNumber === '') {
     throw new Error('number is empty');
   }
@@ -11,5 +13,10 @@ export default function getExtractedNumbers(serialNumber: string): number[] {
   const splitText = extractedText.split('');
   const convertedNumbers = splitText.map((entry) => parseInt(entry, 10))
 
-  return convertedNumbers;
+  let code: Code;
+  for (const [index, value] of convertedNumbers.entries()) {
+    code[index] = value
+  }
+
+  return code;
 }

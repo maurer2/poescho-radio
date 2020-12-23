@@ -1,5 +1,7 @@
 import getExtractedNumbers from './get-extracted-numbers';
 
+import { Code } from '../types/types';
+
 describe('getExtractedNumbers', () => {
   it('return', () => {
     // const test = getExtractedNumbers('');
