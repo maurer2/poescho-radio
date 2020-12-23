@@ -15,7 +15,7 @@
     "typescript": "^4.1.3"
   },
   "scripts": {
-    "calculate-code": "ts-node ./ts/calculate-code.ts",
-    "test:calculate-code": "yarn jest --watch"
+    "run:calculate-code": "ts-node ./ts/calculate-code.ts",
+    "test:all": "yarn jest --watch"
   }
 }

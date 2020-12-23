@@ -1,6 +1,6 @@
-export function getExtractedNumbers(serialNumber: string): number[] {
+export default function getExtractedNumbers(serialNumber: string): number[] {
   if (serialNumber == null || serialNumber === '') {
-    throw 'number is empty';
+    throw new Error('number is empty');
   }
 
   if (serialNumber.length < 4) {
@@ -13,13 +13,3 @@ export function getExtractedNumbers(serialNumber: string): number[] {
 
   return convertedNumbers;
 }
-
-export function getAbsoluteNumbers(numbers: number[]): number[]  {
-  return numbers
-}
-
-export function getCorrectedNumbers(numbers: number[]): number[]  {
-  return numbers
-}
-
-console.log('meow')
