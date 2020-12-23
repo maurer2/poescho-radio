@@ -16,6 +16,6 @@
   },
   "scripts": {
     "run:calculate-code": "ts-node ./ts/calculate-code.ts",
-    "test:all": "yarn jest --watch"
+    "test:all": "yarn jest --watch --coverage"
   }
 }

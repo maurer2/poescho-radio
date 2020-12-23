@@ -1,7 +1,5 @@
 import getExtractedNumbers from './get-extracted-numbers';
 
-import { Code } from '../types/types';
-
 describe('getExtractedNumbers', () => {
   it('returns error when serialNumber is missing', () => {
     expect(() => {
