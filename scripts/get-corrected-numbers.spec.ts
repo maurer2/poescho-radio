@@ -2,9 +2,10 @@ import getCorrectedNumbers from './get-corrected-numbers';
 
 import { Code } from '../types/types';
 
-describe('getCorrectedNumbers', () => {
+describe.skip('getCorrectedNumbers', () => {
   it('returns', () => {
-    const test = getCorrectedNumbers([1,2,3,4,4]);
+    const number: Code = [4,6,5,4]
+    const test = getCorrectedNumbers(number);
 
     expect(test).toBe(true);
   })
