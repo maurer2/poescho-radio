@@ -4,15 +4,15 @@ import { Code } from '../types/types';
 
 describe('getAbsoluteNumbers', () => {
   it('returns error when numbers parameter is missing', () => {
-    expect(getAbsoluteNumbers(null as any)).toThrow(Error);
+    expect(() => getAbsoluteNumbers(null as any)).toThrow(Error);
   })
 
   it('returns error when numbers parameter is too short', () => {
-    expect(getAbsoluteNumbers([1,2,3] as any)).toThrow(Error);
+    expect(() => getAbsoluteNumbers([1,2,3] as any)).toThrow(Error);
   })
 
   it('returns error when numbers parameter contain negative value(s)', () => {
-    expect(getAbsoluteNumbers(<Code>[5,5,5, -5])).toThrow(Error);
+    expect(() => getAbsoluteNumbers(<Code>[5,5,5,-5])).toThrow(Error);
   })
 
   it('returns correct result for 0000', () => {
