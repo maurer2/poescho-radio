@@ -1,6 +1,6 @@
 import { Code } from '../types/types';
 
-export default function getExtractedNumbers(serialNumber: string): Code {
+export default function extractNumbers(serialNumber: string): Code {
   if (serialNumber == null) {
     throw new Error('serialNumber is missing');
   }

@@ -1,6 +1,6 @@
 import { Code } from '../types/types';
 
-export default function getAbsolute(numbers: Code): Code {
+export default function calculateNumbers(numbers: Code): Code {
   if (numbers == null) {
     throw new Error(`numbers is missing`);
   }
