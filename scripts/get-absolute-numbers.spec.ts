@@ -3,16 +3,16 @@ import getAbsoluteNumbers from './get-absolute-numbers';
 import { Code } from '../types/types';
 
 describe('getAbsoluteNumbers', () => {
-  it('returns error when numbers is missing', () => {
+  it('returns error when numbers parameter is missing', () => {
     expect(getAbsoluteNumbers(null as any)).toThrow(Error);
   })
 
-  it('returns error when numbers is too short', () => {
+  it('returns error when numbers parameter is too short', () => {
     expect(getAbsoluteNumbers([1,2,3] as any)).toThrow(Error);
   })
 
-  it('returns error when numbers contain negative value(s)', () => {
-    expect(getAbsoluteNumbers([5,5,5, -5])).toThrow(Error);
+  it('returns error when numbers parameter contain negative value(s)', () => {
+    expect(getAbsoluteNumbers(<Code>[5,5,5, -5])).toThrow(Error);
   })
 
   it('returns correct result for 0000', () => {
@@ -25,7 +25,7 @@ describe('getAbsoluteNumbers', () => {
     const number: Code = [4,6,5,4];
     const result = getAbsoluteNumbers(number);
 
-    expect(result).toEqual([5,8,8,8]);
+    expect(result).toEqual([5,2,2,2]);
   })
 
   it('returns correct result for 9999', () => {
