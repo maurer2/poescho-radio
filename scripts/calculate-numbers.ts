@@ -2,7 +2,7 @@ import { Code } from '../types/types';
 
 export default function calculateNumbers(numbers: Code): Code {
   if (numbers == null) {
-    throw new Error(`numbers is missing`);
+    throw new Error('numbers is missing');
   }
 
   if (numbers.length < 4) {
@@ -17,19 +17,19 @@ export default function calculateNumbers(numbers: Code): Code {
     let convertedNumber = number + (index + 1);
 
     if (convertedNumber >= 10) {
-      convertedNumber = convertedNumber - 10;
+      convertedNumber -= 10;
     }
 
-    return convertedNumber
-  })
+    return convertedNumber;
+  });
 
   const convertedNumbersWithCorrection = <Code>convertedNumbers.map((number) => {
     if (number > 6) {
       return number - 6;
     }
 
-    return number
-  })
+    return number;
+  });
 
   return convertedNumbersWithCorrection;
 }

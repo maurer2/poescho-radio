@@ -5,7 +5,7 @@ export default function extractNumbers(serialNumber: string): Code {
     throw new Error('serialNumber is missing');
   }
 
-  if (typeof serialNumber !== 'string' ) {
+  if (typeof serialNumber !== 'string') {
     throw new Error('serialNumber is not a string');
   }
 
@@ -20,11 +20,11 @@ export default function extractNumbers(serialNumber: string): Code {
   }
 
   const extractedLastDigitsAsArray = extractedLastDigits.split('');
-  const parsedNumbersArray = extractedLastDigitsAsArray.map((entry) => parseInt(entry, 10))
+  const parsedNumbersArray = extractedLastDigitsAsArray.map((entry) => parseInt(entry, 10));
 
-  let code: Code = [0,0,0,0]
+  const code: Code = [0, 0, 0, 0];
   for (const [index, value] of parsedNumbersArray.entries()) {
-    code[index] = value
+    code[index] = value;
   }
 
   return code;

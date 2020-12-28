@@ -5,10 +5,10 @@ import chalk from 'chalk';
 import extractNumbers from './extract-numbers';
 import calculateNumbers from './calculate-numbers';
 
-const argumentValues = yargs(hideBin(process.argv)).argv
+const argumentValues = yargs(hideBin(process.argv)).argv;
 
 if ('number' in argumentValues) {
-  const serialNumberRaw = argumentValues['number'];
+  const serialNumberRaw = argumentValues.number;
   let serialNumber = serialNumberRaw;
 
   if (typeof serialNumberRaw === 'boolean') {
@@ -16,8 +16,8 @@ if ('number' in argumentValues) {
   }
 
   try {
-    const extractedNumber = extractNumbers(String(serialNumber))
-    const calculateNumber = calculateNumbers(extractedNumber)
+    const extractedNumber = extractNumbers(String(serialNumber));
+    const calculateNumber = calculateNumbers(extractedNumber);
 
     console.log(`
       Serial number: ${chalk.green(chalk.bold(serialNumber))}
@@ -27,5 +27,5 @@ if ('number' in argumentValues) {
     console.log(`Error: ${error.message}`);
   }
 } else {
-  console.log(`Error: --number is missing`);
+  console.log('Error: --number is missing');
 }
