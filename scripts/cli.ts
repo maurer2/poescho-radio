@@ -1,5 +1,6 @@
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
+import chalk from 'chalk';
 
 import extractNumbers from './extract-numbers';
 import calculateNumbers from './calculate-numbers';
@@ -18,9 +19,10 @@ if ('number' in argumentValues) {
     const extractedNumber = extractNumbers(String(serialNumber))
     const calculateNumber = calculateNumbers(extractedNumber)
 
-    console.log(`Serial number: ${serialNumber}`);
-    console.log(`Calculated code: ${calculateNumber}`);
-
+    console.log(`
+      Serial number: ${chalk.green(chalk.bold(serialNumber))}
+      Calculated code: ${chalk.magenta(chalk.bold(calculateNumber))}
+    `);
   } catch (error) {
     console.log(`Error: ${error.message}`);
   }
