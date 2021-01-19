@@ -1,9 +1,6 @@
 {
-  "name": " ",
+  "name": "ui",
   "version": "0.0.1",
-  "description": "",
-  "keywords": "",
-  "license": "",
   "author": "",
   "scripts": {
     "build": "parcel build index.html",
