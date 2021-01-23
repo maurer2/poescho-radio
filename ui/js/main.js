@@ -4,7 +4,11 @@ import formTemplate from './form.js';
 
 const template = html`
   <h1>Poescho-Radio</h1>
-  ${formTemplate()}
+  ${formTemplate('mau', updateTemplate)}
 `;
 
-render(template, document.body);
+function updateTemplate() {
+  render(template, document.body);
+}
+
+updateTemplate()

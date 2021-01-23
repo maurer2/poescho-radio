@@ -5,11 +5,22 @@ let calculatedNumber = 1234;
 
 function handleSubmit(event) {
   event.preventDefault();
-  console.log('submit', event)
+  console.log('submit', event);
 }
 
-const formTemplate = () => html`
-  <form action="" method="post" @submit=${handleSubmit}>
+function handleInput(event, cb) {
+  const newInputValue = event.target.value;
+
+  serialNumber = newInputValue;
+
+  console.log('handleInput', newInputValue, serialNumber)
+
+  cb()
+}
+
+const formTemplate = (mauTest, updateTemplate) => html`
+  <form action="" method="post" @submit=${(event) => handleSubmit(event)}>
+    <h1>${serialNumber} ${mauTest}</h1>
     <div>
       <label for="serialNumber">Serial number:</label>
       <input
@@ -17,6 +28,7 @@ const formTemplate = () => html`
         id="serial-number"
         name="serial-number"
         placeholder="Serial number"
+        @input=${(event) => handleInput(event, updateTemplate)}
       />
     </div>
     <div>
