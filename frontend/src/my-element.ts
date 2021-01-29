@@ -1,3 +1,5 @@
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable import/prefer-default-export */
 /**
  * @license
  * Copyright (c) 2019 The Polymer Project Authors. All rights reserved.
@@ -12,7 +14,9 @@
  * http://polymer.github.io/PATENTS.txt
  */
 
-import {LitElement, html, customElement, property, css} from 'lit-element';
+import {
+LitElement, html, customElement, property, css,
+} from 'lit-element';
 
 /**
  * An example element.
@@ -40,7 +44,7 @@ export class MyElement extends LitElement {
   /**
    * The number of times the button has been clicked.
    */
-  @property({type: Number})
+  @property({ type: Number })
   count = 0;
 
   render() {
