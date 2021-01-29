@@ -13,12 +13,12 @@
  */
 
 import filesize from 'rollup-plugin-filesize';
-import {terser} from 'rollup-plugin-terser';
+import { terser } from 'rollup-plugin-terser';
 import resolve from 'rollup-plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 
 export default {
-  input: 'my-element.js',
+  input: 'dist/my-element.js',
   output: {
     file: 'my-element.bundled.js',
     format: 'esm',
@@ -29,7 +29,7 @@ export default {
     }
   },
   plugins: [
-    replace({'Reflect.decorate': 'undefined'}),
+    replace({ 'Reflect.decorate': 'undefined' }),
     resolve(),
     terser({
       module: true,
