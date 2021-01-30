@@ -24,7 +24,7 @@ import {
     private handleSubmit(event: Event) {
       event.preventDefault();
 
-      console.log('handle submit2', event);
+      console.log('handle submit', event);
     }
 
     private handleInput(event: Event) {
