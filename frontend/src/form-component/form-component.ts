@@ -7,7 +7,7 @@ import {
   LitElement, html, customElement, property,
 } from 'lit-element';
 
- import { FormComponentStyles } from './form-component.styles';
+import { FormComponentStyles } from './form-component.styles';
 
 @customElement('form-component')
 export class FormComponent extends LitElement {
@@ -41,7 +41,6 @@ export class FormComponent extends LitElement {
   render() {
     return html`
       <form class="form" action="" method="post" @submit=${(event: Event) => this.handleSubmit(event)}>
-        <code>Serial number: ${this.serialNumber}</code>
         <div>
           <label for="serialNumber">Serial number:</label>
           <input
@@ -56,9 +55,16 @@ export class FormComponent extends LitElement {
         <div>
           <button type="submit">Submit</button>
         </div>
-        <div>
-          <code>Calculated Number: ${this.calculatedNumber}</code>
-        </div>
+        <dl class="results">
+          <dt class="key">Serial number:</dt>
+          <dd class="value">
+            <code>
+              ${this.serialNumber ? this.serialNumber : '-----'}
+            </code>
+          </dd>
+          <dt class="key">Calculated number:</dt>
+          <dd class="value"><code>${this.calculatedNumber}</code></dd>
+        </dl>
       </form>
     `;
   }

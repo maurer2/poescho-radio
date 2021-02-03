@@ -8,4 +8,17 @@ export const FormComponentStyles = css`
     border: 1px solid black;
     max-width: 320px;
   }
+
+  .results {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+  }
+
+  .key {
+    font-weight: bold;
+  }
+
+  .value {
+    margin-left: 0.75rem;
+  }
 `;
