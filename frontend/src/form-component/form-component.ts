@@ -29,6 +29,14 @@ export class FormComponent extends LitElement {
     console.log('handle submit', event);
   }
 
+  private handleReset(event: Event) {
+    event.preventDefault();
+
+    this.serialNumber = '';
+
+    console.log('handle reset', event);
+  }
+
   private handleInput(event: InputEvent) {
     if (!event.currentTarget) {
       return;
@@ -40,7 +48,13 @@ export class FormComponent extends LitElement {
 
   render() {
     return html`
-      <form class="form" action="" method="post" @submit=${(event: Event) => this.handleSubmit(event)}>
+      <form
+        class="form"
+        action=""
+        method="post"
+        @submit=${(event: Event) => this.handleSubmit(event)}
+        @reset=${(event: Event) => this.handleReset(event)}
+      >
         <div>
           <label for="serialNumber">Serial number:</label>
           <input
@@ -52,8 +66,9 @@ export class FormComponent extends LitElement {
             @input=${(event: InputEvent) => this.handleInput(event)}
           />
         </div>
-        <div>
-          <button type="submit">Submit</button>
+        <div class="buttons">
+          <button type="submit">Calculate code</button>
+          <button type="reset">Reset fields</button>
         </div>
         <dl class="results">
           <dt class="key">Serial number:</dt>

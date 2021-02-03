@@ -9,6 +9,10 @@ export const FormComponentStyles = css`
     max-width: 320px;
   }
 
+  .buttons {
+    margin: 1rem 0;
+  }
+
   .results {
     display: grid;
     grid-template-columns: max-content 1fr;
